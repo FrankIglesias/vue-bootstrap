@@ -23,16 +23,25 @@ module.exports = {
       }
     }
   },
-  // add your custom rules here
   rules: {
-    // don't require .vue extension when importing
-    'import/extensions': ['error', 'always', {
-      js: 'never',
-      vue: 'never'
+    "no-invalid-this": "off",
+    "no-return-assign": "off",
+    "no-param-reassign": "off",
+    "no-nested-ternary": "off",
+    "import/order": ["error", {"newlines-between": "never"}],
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "error",
+    "import/extensions": ["error", "always", {
+      js: "never",
+      vue: "never"
     }],
-    // disallow reassignment of function parameters
-    // disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': ['error', {
+    "import/named": 2,
+    "import/default": 2,
+    "import/namespace": 2,
+    "import/no-absolute-path": "error",
+    "import/no-extraneous-dependencies": "off",
+    "import/export": 2,
+    "no-param-reassign": ["error", {
       props: true,
       ignorePropertyModificationsFor: [
         'state', // for vuex state
@@ -40,11 +49,7 @@ module.exports = {
         'e' // for e.returnvalue
       ]
     }],
-    // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js']
-    }],
-    // allow debugger during development
+    'comma-dangle': ["error", "never"],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
 }
