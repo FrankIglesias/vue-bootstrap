@@ -50,6 +50,7 @@ module.exports = {
       ]
     }],
     'comma-dangle': ["error", "never"],
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-shared-component-data': 'off'
   }
 }

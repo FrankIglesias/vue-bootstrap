@@ -1,17 +1,25 @@
 <template lang="pug">
-  #header
-    img(src={logo} alt="")
+  .header-container
+    img.logo(src="../../assets/ASSETS/wbooks_logo.svg" alt="")
 </template>
 
 <script>
-import wBooksImage from '../../assets/ASSETS/wbooks_logo.svg';
-
 export default {
-  name: 'Header',
-  data() {
-    return ({
-      logo: wBooksImage
-    });
-  }
+  name: 'Header'
 };
 </script>
+
+<style lang="sass" scoped>
+  .header-container
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid gray;
+    background: white;
+
+  .logo
+    height: 50px;
+</style>
