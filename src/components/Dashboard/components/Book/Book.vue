@@ -1,6 +1,6 @@
 <template lang="pug">
   .container
-    router-link( :to="`book/${book.id}`").image-container
+    router-link( :to="`books/${book.id}`").image-container
       img(v-if="!book.image_url" src="../../../../assets/ASSETS/default_book.svg")
       img.book-image(v-if="book.image_url" :src="book.image_url")
     p.book-description.strong
