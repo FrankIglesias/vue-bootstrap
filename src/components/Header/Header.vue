@@ -19,6 +19,7 @@ export default {
     top: 0;
     border-bottom: 1px solid gray;
     background: white;
+    padding: 0 10px;
 
   .logo
     height: 50px;
