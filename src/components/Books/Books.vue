@@ -1,13 +1,29 @@
 <template lang="pug">
   .container
-    .go-back
+    a.go-back
       | < Volver
-      
+    .book-detail-container
+      img.book-image( :src="book.image_url" alt="")
+      .description-container
+        h1
+          | {{book.title}}
+        h2
+          | {{book.author}}
+        p
+          | {{book.year}}
 </template>
 
 <script>
+import Books from '../../services/books';
+
 export default {
-  
+  name: 'Book',
+  data() {
+    const book = Books.find(b => b.id === Number(this.$route.params.id));
+    return {
+      book
+    };
+  }
 };
 </script>
 
@@ -15,7 +31,17 @@ export default {
   .container
     display: flex;
     flex-direction: column;
-   
-    .go-back
-      align-self: flex-start;
+    padding: 30px 10px 0;
+
+  .go-back
+    align-self: flex-start;
+
+  .book-image
+    width: 200px;
+    margin-right: 10px;
+
+  .book-detail-container
+    display: flex;
+    align-self: center;
+
 </style>
